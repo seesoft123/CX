@@ -113,7 +113,25 @@
 			background-size: 1100px 965px;
 			height: 965px;
 			border: none;
+			-webkit-animation-duration: 10s;
+           		animation-duration: 10s;
+            		-webkit-animation-fill-mode: both;
+            		animation-fill-mode: both;
 		}
+		@-webkit-keyframes fadeIn {
+		    0% {opacity: 0;}
+		    100% {opacity: 1;}
+		 }
+
+		 @keyframes fadeIn {
+		    0% {opacity: 0;}
+		    100% {opacity: 1;}
+		 }
+
+		 .fadeIn {
+		    -webkit-animation-name: fadeIn;
+		    animation-name: fadeIn;
+		 }
 		.cx-01{
 			padding: 10px 15px 166px 15px;
 			position: relative;
@@ -194,7 +212,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="path">
+		<div class="path fadeIn">
 				<div class="cx-01">
 					<p>Establish short and long-term phase and sequence details for reaching your desired end state while achieving maximum impact along the way.</p>
 					<ul class="bullet-list">
