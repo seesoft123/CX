@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>CX Page</title>
+	
+	
 	<style>
 	/* Small devices (landscape phones, 576px and up)*/
 	@media only screen and (min-width: 320px) and (max-width: 1023px) { 
@@ -14,9 +16,12 @@
 			line-height: 22px;
 			color: #707070;
 		}
-		.path{
+		#path{
 			position: relative;
 			margin: 0 auto;
+		}
+		#path div{
+		  opacity: 0;
 		}
 		.cx-01{
 			padding: 0px 15px 10px 180px;
@@ -104,7 +109,7 @@
 			line-height: 22px;
 			color: #707070;
 		}
-		.path{
+		#path{
 			margin: 0 auto;
 			padding: 0;
 			background-image: url("https://seesoft123.github.io/cx/images/cx-path.png");
@@ -113,6 +118,9 @@
 			background-size: 1100px 965px;
 			height: 965px;
 			border: none;
+		}
+		#path div{
+		  opacity: 0;
 		}
 		.cx-01{
 			padding: 10px 15px 166px 15px;
@@ -188,44 +196,12 @@
 			margin-left: 25px;
 		}
 	}
-
-		.fade-in {
-		  animation: fadeIn ease 2s;
-		  -webkit-animation: fadeIn ease 2s;
-		  -moz-animation: fadeIn ease 2s;
-		  -o-animation: fadeIn ease 2s;
-		  -ms-animation: fadeIn ease 2s;
-		}
-		@keyframes fadeIn {
-		  0% {opacity:0;}
-		  100% {opacity:1;}
-		}
-
-		@-moz-keyframes fadeIn {
-		  0% {opacity:0;}
-		  100% {opacity:1;}
-		}
-
-		@-webkit-keyframes fadeIn {
-		  0% {opacity:0;}
-		  100% {opacity:1;}
-		}
-
-		@-o-keyframes fadeIn {
-		  0% {opacity:0;}
-		  100% {opacity:1;}
-		}
-
-		@-ms-keyframes fadeIn {
-		  0% {opacity:0;}
-		  100% {opacity:1;}
-		}
 	</style>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="path">
-				<div class="cx-01">
+		<div id="path">
+				<div class="cx-01 cx">
 					<p>Establish short and long-term phase and sequence details for reaching your desired end state while achieving maximum impact along the way.</p>
 					<ul class="bullet-list">
 						<li>Documented CX Vision</li>
@@ -233,21 +209,21 @@
 						<li>Roadmap to Success</li>
 					</ul>				
 				</div>
-				<div class="cx-02">
+				<div class="cx-02 cx">
 					<p>Create a strong foundation for addressing cultural transformation through alignment and design-thinking principles in tandem with customer data unification, enrichment, and a 360° view of your customers.</p>
 					<ul class="bullet-list">
 						<li>Customer-Focused Culture</li>
 						<li>Unified Customer Data</li>
 					</ul>
 				</div>
-				<div class="cx-03">
+				<div class="cx-03 cx">
 					<p>Customer-focused design and development of digital platforms that drive customer touchpoints with your brand.</p>
 					<ul class="bullet-list">
 						<li>User Experience Web Design &amp; Development</li>
 						<li>MarTech Integration and Optimization – CMS, Automation, ABM &amp; Performance technology</li>
 					</ul>
 				</div>
-				<div class="cx-04">
+				<div class="cx-04 cx">
 					<p>Leverage data-driven customer profile to power effective, consistent and relevant experiences across the customer journey.</p>
 					<ul class="bullet-list">
 						<li>Seamless Customer- Brand interaction across the org</li>
@@ -261,57 +237,14 @@
 	</div>
 	
 </body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
-	 //fn call customer experience starts
-    function ceAnimation() {
-     var fromTop = Math.floor(window.scrollY);
-    var rect = this.document.getElementById("cloud-journey-wrapper").getBoundingClientRect();
-    var scrollOffset = rect.height / 8;
-
-    $($("#ce-path-detail-one").find("img")[0]).attr('src', "/media/42375/cx-vision-bw.png");
-    $($("#ce-path-detail-one .ce-path-info").get(0)).removeClass("ce-path-info-one");
-
-
-    if (document.getElementById("cloud-journey-wrapper").offsetTop + scrollOffset < fromTop) {
-
-        $($("#ce-path-detail-one .ce-path-info").get(0)).addClass("ce-path-info-one");
-        $($("#ce-path-detail-two .ce-path-info").get(0)).removeClass("ce-path-info-two");
-
-        $($("#ce-path-detail-one").find("img")[0]).attr('src', "/media/42376/cx-vision-color.png");
-        $($("#ce-path-detail-two").find("img")[0]).attr('src', "/media/42373/customer-focus-insight-bw.png");
-
-
-
-    }
-    if (document.getElementById("cloud-journey-wrapper").offsetTop + scrollOffset * 2 < fromTop) {
-
-        $($("#ce-path-detail-two .ce-path-info").get(0)).addClass("ce-path-info-two");
-        $($("#ce-path-detail-three .ce-path-info").get(0)).removeClass("ce-path-info-three");
-
-
-        $($("#ce-path-detail-two").find("img")[0]).attr('src', "/media/42374/customer-focus-insight-color.png");
-        $($("#ce-path-detail-three").find("img")[0]).attr('src', "/media/42377/modern-experience-platforms-bw.png");
-
-    }
-
-    if (document.getElementById("cloud-journey-wrapper").offsetTop + scrollOffset * 3 < fromTop) {
-        $($("#ce-path-detail-three .ce-path-info").get(0)).addClass("ce-path-info-three");
-        $($("#ce-path-detail-four .ce-path-info").get(0)).removeClass("ce-path-info-four");
-
-
-        $($("#ce-path-detail-three").find("img")[0]).attr('src', "/media/42378/modern-experience-platforms-color.png");
-        $($("#ce-path-detail-four").find("img")[0]).attr('src', "/media/42380/personalization-bw.png");
-
-
-    }
-    if (document.getElementById("cloud-journey-wrapper").offsetTop + scrollOffset * 4 < fromTop) {
-        $($("#ce-path-detail-four .ce-path-info").get(0)).addClass("ce-path-info-four");
-
-
-        $($("#ce-path-detail-four").find("img")[0]).attr('src', "/media/42381/personalization-color.png");
-
-
-    }
-    }
+		$(function () {
+		  $("#path div").each(function (i) {
+			$(this)
+			  .delay(i++ * 300)
+			  .fadeTo(1000, 1);
+		  });
+		});
 	</script>
 </html>
